@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Gabarito:wght@400..900&family=Gabriela&family=Inter:opsz,wght@14..32,100..900&family=Miniver&family=Montserrat:wght@500&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gabarito", sans-serif;
+}
+
+:root {
+  --primary: #e8dfce;
+  --secondary: #281f18;
+  --orange: #bb7037;
+  --cream: #e8dfce;
+  --coffee: #844c49;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-orange: var(--orange);
+  --color-cream: var(--cream);
+  --color-coffee: var(--coffee);
+}
