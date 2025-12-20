@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md lg:bg-transparent">
-      <nav className="max-w-7xl mx-auto flex justify-between items-center h-20 px-4">
+      <nav className="md:max-w-7xl w-full mx-auto flex justify-between items-center h-20 px-4">
         <div className="flex-shrink-0">
           <Link to="/" className="flex items-center cursor-pointer">
             <img src="./logo.png" alt="Logo" className="w-32 lg:w-[180px]" />

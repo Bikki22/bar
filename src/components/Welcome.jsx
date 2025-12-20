@@ -5,7 +5,7 @@ import Button from "./Button";
 const Welcome = () => {
   return (
     <section className="w-full py-15 px-4 bg-primary ">
-      <div className="max-w-5xl mx-auto flex items-center justify-center gap-2 px-2">
+      <div className="md:max-w-5xl mx-auto flex items-center justify-center gap-2 px-2">
         <span
           className="relative inline-block w-3 h-3 rounded-full bg-stone-800
             before:content-['']
@@ -113,7 +113,7 @@ const Welcome = () => {
           className="object-cover absolute -top-30"
         />
       </div>
-      <div className="lg:flex justify-center lg:justify-between lg:items-center w-6xl mx-auto relative">
+      <div className="lg:flex justify-center lg:justify-between lg:items-center md:w-6xl mx-auto relative">
         <div className="lg:w-3xl md:w-xl w-70 flex flex-col md:ml-18 lg:ml-1 ml-10">
           <div className="bg-orange py-3 px-2 relative shadow-lg">
             <svg
@@ -182,7 +182,7 @@ const Welcome = () => {
             <Button content={"Explore Our History"} />
           </div>
         </div>
-        <div className="md:w-xl w-90 md:ml-18 lg:ml-0 lg:w-5xl border-15 border-[#ebe6df] flex justify-center items-center">
+        <div className="md:w-xl w-90 bg-red-500 md:ml-18 lg:ml-0 lg:w-5xl border-15 border-[#ebe6df] flex justify-center items-center">
           <img
             src="./beer-glass.jpg"
             alt=""
