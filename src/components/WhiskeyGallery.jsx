@@ -67,7 +67,7 @@ const WhiskeyGallery = () => {
 
   return (
     <div className="w-full bg-cream py-20 px-4 md:px-10 bg-[url('./dust.png')]">
-      <div className="flex flex-wrap justify-center items-center gap-6 mb-16 border-t-4 border-b-4 border-black/20 w-fit translate-x-1/2">
+      <div className="flex flex-wrap justify-center items-center gap-6 mb-16 border-t-4 border-b-4 border-black/10 w-fit translate-x-1/2">
         {["ALL", "ENGLISH WHISKY", "IRISH WHISKEY", "SCOTTISH WHISKY"].map(
           (tab, index, arr) => (
             <React.Fragment key={tab}>

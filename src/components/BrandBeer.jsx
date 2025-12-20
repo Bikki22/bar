@@ -6,7 +6,7 @@ const BrandBeer = () => {
       className="relative bg-[#2a1d16] p-16 text-white overflow-hidden
 
         before:content-['★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★']
-        before:absolute
+        before:absolute        
         before:top-2
         before:left-0
         before:w-full
@@ -14,7 +14,7 @@ const BrandBeer = () => {
         before:text-white
         before:text-xs
         before:hidden
-        before:md:block
+        before:lg:block
         before:tracking-[6px]
 
         after:content-['★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★']
@@ -25,11 +25,11 @@ const BrandBeer = () => {
         after:text-center
         after:text-white
         after:hidden
-        after:md:block
+        after:lg:block
         after:text-xs
         after:tracking-[6px]"
     >
-      <span className="absolute hidden md:block  left-2 top-0 h-full flex flex-col justify-center text-white text-xs leading-[14px]">
+      <span className="absolute hidden lg:block  left-2 top-0 h-full flex flex-col justify-center text-white text-xs leading-[14px]">
         ★<br />★<br />★<br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★
         <br />★<br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★<br />★
         <br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★
@@ -39,7 +39,7 @@ const BrandBeer = () => {
         <br />★<br />★<br />★<br />★<br />★<br />★<br />
       </span>
 
-      <span className="absolute hidden md:block  right-2 top-0 h-full flex flex-col justify-center text-white text-xs leading-[14px]">
+      <span className="absolute hidden lg:block  right-2 top-0 h-full flex flex-col justify-center text-white text-xs leading-[14px]">
         ★<br />★<br />★<br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★
         <br />★<br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★<br />★
         <br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★
