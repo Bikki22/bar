@@ -73,11 +73,11 @@ const WhiskeyGallery = () => {
             <React.Fragment key={tab}>
               <button
                 onClick={() => setActiveTab(tab)}
-                className={`text-lg md:text-xl py-6 font-bold uppercase tracking-widest transition-colors
+                className={`text-lg md:text-xl py-6 font-bold uppercase tracking-widest transition-all duration-300 border-t-6 border-b-6
                 ${
                   activeTab === tab
-                    ? "text-coffee border-b-6 border-t-6 border-coffee"
-                    : "text-black hover:text-[#8B2B1A]"
+                    ? "text-coffee border-coffee"
+                    : "text-black hover:text-[#8B2B1A] hover:border-[#8B2B1A]"
                 }`}
               >
                 {tab}

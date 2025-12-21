@@ -12,7 +12,7 @@ const rightMenu = [
   { label: "Blog", route: "/blog" },
   { label: "Shop", route: "/shop" },
   { label: "Contacts", route: "/contacts" },
-];
+];  
 
 const NextNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
