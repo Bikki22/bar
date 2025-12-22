@@ -2,6 +2,44 @@ import { ArrowRight } from "lucide-react";
 import Testimonial from "../components/Testimonial";
 
 const Pages = () => {
+  const teamMembers = [
+    {
+      name: "ROBIN SMITH",
+      role: "Barman",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    },
+    {
+      name: "DAVID WHITE",
+      role: "Manager",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    },
+    {
+      name: "ALEX FOREST",
+      role: "Sales Manager",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    },
+    {
+      name: "ROBIN SMITH",
+      role: "Barman",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    },
+    {
+      name: "DAVID WHITE",
+      role: "Manager",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+    },
+    {
+      name: "ALEX FOREST",
+      role: "Sales Manager",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    },
+  ];
   return (
     <section className="relative w-full bg-cover bg-center">
       <div
@@ -184,7 +222,7 @@ const Pages = () => {
               Meet our team
             </h3>
           </div>
-          <Testimonial />
+          <Testimonial teamMembers={teamMembers} />
         </div>
       </div>
     </section>

@@ -1,44 +1,6 @@
 import React from "react";
 
-const Testimonial = () => {
-  const teamMembers = [
-    {
-      name: "ROBIN SMITH",
-      role: "Barman",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-    },
-    {
-      name: "DAVID WHITE",
-      role: "Manager",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-    },
-    {
-      name: "ALEX FOREST",
-      role: "Sales Manager",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-    },
-    {
-      name: "ROBIN SMITH",
-      role: "Barman",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-    },
-    {
-      name: "DAVID WHITE",
-      role: "Manager",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-    },
-    {
-      name: "ALEX FOREST",
-      role: "Sales Manager",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-    },
-  ];
+const Testimonial = ({ teamMembers }) => {
   return (
     <div className="flex items-center justify-center py-10 mt-6 w-full">
       <div className="w-full max-w-full">

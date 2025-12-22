@@ -4,25 +4,51 @@ import { Star, ShoppingBasket, Menu, X } from "lucide-react";
 
 const leftMenu = [
   { label: "Home", route: "/" },
-  { label: "Pages", route: "/pages" },
+  {
+    label: "Pages",
+    route: "/pages",
+    subMenu: [
+      { route: "/about-us", label: "About Us" },
+      { route: "/our-services", label: "Our Service" },
+      { route: "/teams", label: "Our Team" },
+    ],
+  },
   { label: "Portfolio", route: "/portfolio" },
 ];
 
 const rightMenu = [
   { label: "Blog", route: "/blog" },
-  { label: "Shop", route: "/shop" },
+  { label: "Shop", route: "/products" },
   { label: "Contacts", route: "/contacts" },
-];  
+];
 
 const NextNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const NavItem = ({ menu, index, total }) => (
     <React.Fragment>
-      <li className="uppercase text-xl lg:text-2xl font-bold text-cream hover:text-primary transition-colors">
+      <li className="uppercase text-xl lg:text-2xl font-bold text-cream hover:text-primary transition-colors relative group">
         <NavLink to={menu.route} onClick={() => setIsOpen(false)}>
           {menu.label}
         </NavLink>
+        {menu.subMenu && (
+          <ul
+            className="absolute top-full left-0 mt-4 min-w-[300px] bg-cream border-5 border-coffee
+            opacity-0 invisible group-hover:opacity-100 group-hover:visible
+            transition-all duration-200 z-50"
+          >
+            {menu.subMenu.map((sub, i) => (
+              <li key={i}>
+                <NavLink
+                  to={sub.route}
+                  className="block px-6 py-3 text-lg text-coffee hover:bg-coffee hover:text-white border-b border-dotted"
+                >
+                  {sub.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        )}
       </li>
       {index !== total - 1 && (
         <Star className="hidden lg:block size-4 text-cream fill-cream" />

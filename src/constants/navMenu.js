@@ -17,7 +17,7 @@ export const NavMenu = [
   },
   {
     label: "Shop",
-    route: "/shop",
+    route: "/products",
   },
   {
     label: "Contacts",

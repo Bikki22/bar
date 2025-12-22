@@ -185,10 +185,10 @@ const ContactPage = () => {
                   />
                   <p>{errors.email?.message}</p>
                 </div>
-                <div className="border w-full h-30">
+                <div className="w-full h-30">
                   <textarea
                     name="message"
-                    className="w-full h-full bg-coffee/20 px-2 py-1"
+                    className="w-full h-full bg-coffee/20 px-2 py-1 outline-none"
                     placeholder="Your Message"
                   ></textarea>
                 </div>
