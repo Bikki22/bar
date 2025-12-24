@@ -7,7 +7,6 @@ import BrandBeer from "../components/BrandBeer";
 import Blog from "../components/Blog";
 import FindUs from "../components/FindUs";
 import FriendSection from "../components/FriendSection";
-import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (

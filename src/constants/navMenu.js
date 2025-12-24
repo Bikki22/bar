@@ -5,7 +5,7 @@ export const NavMenu = [
   },
   {
     label: "Pages",
-    route: "/pages",
+    route: "/our-team",
   },
   {
     label: "Portfolio",

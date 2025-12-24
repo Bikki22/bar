@@ -1,11 +1,48 @@
 import { Beer } from "lucide-react";
-import React from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import Button from "./Button";
+import RightSlideAnimation from "../animations/RightSlideAnimation";
+import { useRef } from "react";
 
 const Welcome = () => {
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], [-30, 30]);
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.215, 0.61, 0.355, 1] },
+    },
+  };
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
   return (
-    <section className="w-full py-15 px-4 bg-primary ">
-      <div className="md:max-w-5xl mx-auto flex items-center justify-center gap-2 px-2">
+    <motion.section
+      ref={containerRef}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      className="w-full py-20 px-4 bg-primary overflow-hidden" // Increased padding for breathability
+    >
+      <motion.div
+        variants={itemVariants}
+        className="md:max-w-5xl mx-auto flex items-center justify-center gap-2 px-2"
+      >
         <span
           className="relative inline-block w-3 h-3 rounded-full bg-stone-800
             before:content-['']
@@ -54,7 +91,7 @@ const Welcome = () => {
         </h2>
 
         <span
-          className="relative flex-grow h-1 bg-stone-800 gap-1 
+          className="relative grow h-1 bg-stone-800 gap-1 
           before:content-['']
           before:absolute
           before:left-0
@@ -94,18 +131,21 @@ const Welcome = () => {
             after:-translate-y-1/2
             "
         ></span>
-      </div>
-      <div className="flex justify-center items-center">
+      </motion.div>
+      <motion.div className="flex justify-center items-center">
         <Beer className="size-15 font-bold" />
-      </div>
-      <div class="flex items-center justify-center ">
+      </motion.div>
+      <motion.div
+        variants={itemVariants}
+        className="flex items-center justify-center "
+      >
         <h3
-          class="text-5xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-secondary
+          className="text-5xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-secondary
              drop-shadow-[4px_4px_0px_rgba(180,130,90,0.8)]"
         >
           Vintclub Beer
         </h3>
-      </div>
+      </motion.div>
       <div className="w-full h-10 relative">
         <img
           src="./welcome-background.png"
@@ -113,11 +153,14 @@ const Welcome = () => {
           className="object-cover absolute -top-30"
         />
       </div>
-      <div className="lg:flex justify-center lg:justify-between lg:items-center md:w-6xl mx-auto relative">
-        <div className="lg:w-3xl md:w-xl w-70 flex flex-col md:ml-18 lg:ml-1 ml-10">
+      <div className="lg:flex justify-center w-full lg:justify-between lg:items-center lg:w-6xl mx-auto relative ">
+        <motion.div
+          variants={itemVariants}
+          className="lg:w-3xl md:w-xl w-70 flex flex-col md:ml-18 lg:ml-1 ml-10"
+        >
           <div className="bg-orange py-3 px-2 relative shadow-lg">
             <svg
-              className="absolute left-[-40px] top-4 -translate-y-1/2"
+              className="absolute -left-10 top-4 -translate-y-1/2"
               width="78"
               height="52"
               viewBox="0 0 78 52"
@@ -146,22 +189,6 @@ const Welcome = () => {
                 fill="url(#pattern-left)"
               />
             </svg>
-            <svg
-              className="absolute right-[-40px] top-2 -translate-y-1/2 fill-orange"
-              width="68"
-              height="42"
-              viewBox="0 0 78 52"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M77.3,0.2l-12,25.9l12,25.4H0.4V0.2h76.9z"
-                className="#bb7037"
-              />
-            </svg>
-            <div
-              className="bg-[#8b572a] w-7 h-3 inline-block absolute -right-0.5 -top-3 z-10
- [clip-path:polygon(1%_100%,0_0,100%_100%)]"
-            ></div>
             <h3 className="font-serif italic text-3xl text-white text-center">
               Estb 1993
             </h3>
@@ -181,18 +208,21 @@ const Welcome = () => {
           <div className="flex justify-center items-center py-5 px-5">
             <Button content={"Explore Our History"} />
           </div>
-        </div>
-        <div className="md:w-xl w-90 bg-red-500 md:ml-18 lg:ml-0 lg:w-5xl border-15 border-[#ebe6df] flex justify-center items-center">
-          <img
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="md:w-xl md:ml-18 lg:ml-0 lg:w-5xl border-15 border-[#ebe6df] flex justify-center items-center"
+        >
+          <motion.img
+            style={{ y: imgY, scale: 1.1 }}
             src="./beer-glass.jpg"
-            alt=""
-            width={500}
-            height={500}
-            className="w-full h-full"
+            alt="Brewery"
+            className="h-96 w-2xl object-cover "
           />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

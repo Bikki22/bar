@@ -167,7 +167,6 @@ const ShopPage = () => {
                   key={product.id}
                   className="group relative flex flex-col items-center"
                 >
-                  {/* Product Card */}
                   <div className="bg-white p-3 shadow-sm border border-gray-200 w-full flex items-center justify-center relative overflow-hidden">
                     <Link to={`/products/${product.id}`}>
                       <img
@@ -177,7 +176,6 @@ const ShopPage = () => {
                       />
                     </Link>
 
-                    {/* Hover Add to Cart Button */}
                     <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-end pb-6">
                       <button className="bg-[#B36B5D] text-white px-4 py-2 text-xs font-bold uppercase tracking-widest flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform cursor-pointer">
                         <span>
@@ -226,22 +224,12 @@ const ShopPage = () => {
                     {product.price}
                   </p>
                   <div className="flex gap-2 justify-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
+                    {[...Array(10)].map((_, i) => (
+                      <span
+                        key={i}
+                        className="w-1.5 h-1.5 rounded-full bg-gray-400"
+                      ></span>
+                    ))}
                   </div>
                 </div>
               ))}
@@ -294,10 +282,11 @@ const ShopPage = () => {
                     key={i}
                     className="flex gap-4 items-center group cursor-pointer"
                   >
-                    <div className="w-16 h-20 bg-white p-2 border border-gray-200">
+                    <div className="w-16 h-20 bg-white p-2 border border-gray-200 flex-shrink-0">
                       <img
                         src="./bottle_01_pat.jpg"
                         className="w-full h-full object-contain"
+                        alt="product"
                       />
                     </div>
                     <div>

@@ -7,13 +7,14 @@ const NextHero = ({ title }) => {
 
   return (
     <div
-      className="relative z-10 flex items-center justify-center text-center md:h-[650px] h-96"
+      className="relative z-10 flex items-center justify-center text-center md:h-[600px] h-96"
       style={{
         backgroundImage: "url('/barrelbg.jpg')",
+        background: "cover",
       }}
     >
       <div className="space-y-6">
-        <h1 className="retro-text text-cream text-5xl md:text-8xl font-black uppercase tracking-tight mb-4 drop-shadow-[4px_4px_0px_rgba(180,130,90,0.8)]">
+        <h1 className="retro-text md:w-3xl text-cream text-5xl md:text-8xl font-black uppercase tracking-normal mb-4 drop-shadow-[4px_4px_0px_rgba(180,130,90,0.8)]">
           {title}
         </h1>
 

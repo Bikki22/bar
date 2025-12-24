@@ -67,13 +67,13 @@ const WhiskeyGallery = () => {
 
   return (
     <div className="w-full bg-cream py-20 px-4 md:px-10 bg-[url('./dust.png')]">
-      <div className="flex flex-wrap justify-center items-center gap-6 mb-16 border-t-4 border-b-4 border-black/10 w-fit translate-x-1/2">
+      <div className="flex flex-wrap justify-center items-center mb-16 border-t-4 border-b-4 border-black/10 w-fit ">
         {["ALL", "ENGLISH WHISKY", "IRISH WHISKEY", "SCOTTISH WHISKY"].map(
           (tab, index, arr) => (
             <React.Fragment key={tab}>
               <button
                 onClick={() => setActiveTab(tab)}
-                className={`text-lg md:text-xl py-6 font-bold uppercase tracking-widest transition-all duration-300 border-t-6 border-b-6
+                className={`text-lg w-60 md:text-xl py-6 font-bold uppercase tracking-widest transition-all duration-300 border-t-6 border-b-6
                 ${
                   activeTab === tab
                     ? "text-coffee border-coffee"

@@ -12,15 +12,15 @@ const Navbar = () => {
       : "block py-2 pr-4 pl-3 lg:p-0 text-primary hover:text-cream";
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md lg:bg-transparent">
+    <div className="absolute top-10 left-0 w-full z-50 lg:bg-transparent">
       <nav className="md:max-w-7xl w-full mx-auto flex justify-between items-center h-20 px-4">
-        <div className="flex-shrink-0">
+        <div className="shrink-0 relative">
           <Link to="/" className="flex items-center cursor-pointer">
-            <img src="./logo.png" alt="Logo" className="w-32 lg:w-[180px]" />
+            <img src="./logo.png" alt="Logo" className="w-32 lg:w-45" />
           </Link>
         </div>
 
-        <div className="hidden lg:flex justify-around gap-2 text-center py-5 px-5 w-full max-w-3xl">
+        <div className="hidden lg:flex justify-around gap-2 text-center py-2 px-5 w-full max-w-3xl mb-7">
           {NavMenu.map((menu, index) => (
             <React.Fragment key={index}>
               <li className="list-none text-2xl text-primary font-bold flex items-center uppercase">
@@ -37,7 +37,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mb-7">
           <button className="p-2 rounded">
             <ShoppingBasket className="size-8 lg:size-10 text-primary" />
           </button>

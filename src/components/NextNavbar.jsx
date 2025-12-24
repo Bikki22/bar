@@ -6,11 +6,11 @@ const leftMenu = [
   { label: "Home", route: "/" },
   {
     label: "Pages",
-    route: "/pages",
+    route: "/our-team",
     subMenu: [
       { route: "/about-us", label: "About Us" },
       { route: "/our-services", label: "Our Service" },
-      { route: "/teams", label: "Our Team" },
+      { route: "/our-team", label: "Our Team" },
     ],
   },
   { label: "Portfolio", route: "/portfolio" },
@@ -119,7 +119,7 @@ const NextNavbar = () => {
         ${isOpen ? "translate-x-0" : "-translate-x-full"}
       `}
       >
-        <ul className="flex flex-col items-center gap-8">
+        <ul className="flex flex-col items-center gap-5">
           {[...leftMenu, ...rightMenu].map((menu, index) => (
             <li key={index} className="uppercase text-3xl font-bold text-cream">
               <NavLink to={menu.route} onClick={() => setIsOpen(false)}>

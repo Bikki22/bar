@@ -318,8 +318,12 @@ const ServicesPage = () => {
             </h3>
           </div>
           <div className=" w-full overflow-hidden p-5">
-            <div className="flex justify-center items-center border-4 p-3 border-cream">
-              <img src="./wine.jpg" alt="" className="object-cover " />
+            <div className="flex justify-center items-center border-4 md:p-3 sm:px-1  border-cream">
+              <img
+                src="./wine.jpg"
+                alt=""
+                className="object-cover h-full w-auto"
+              />
             </div>
             <button className="group border-t-4 border-b-4 py-2 px-5 border-white/60 hover:border-black mt-6">
               <span
@@ -353,12 +357,12 @@ const ServicesPage = () => {
       </div>
       <div className="w-full bg-cream py-20 px-4 md:px-10">
         <div className="max-w-6xl mx-auto bg-[#DED9D1] shadow-xl border border-black/5">
-          <nav className="flex flex-wrap items-center bg-transparent border-b border-black/10">
+          <nav className="flex flex-nowrap items-center border-b border-black/10 md:w-full lg:w-full w-full">
             {Object.keys(drinks).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-8 py-5 text-xl font-bold tracking-[0.2em] transition-all
+                className={`md:px-8 md:py-5 px-2 py-6 md:text-xl text-sm  font-bold tracking-[0.2em] transition-all
                 ${
                   activeTab === tab
                     ? "bg-[#E7E2DA] text-black shadow-inner"
@@ -372,17 +376,12 @@ const ServicesPage = () => {
 
           <div className="p-6 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="relative bg-white p-4 shadow-2xl border border-gray-200 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
-              <div className="overflow-hidden bg-gray-100 aspect-[4/3]">
+              <div className="overflow-hidden bg-gray-100 aspect-4/3">
                 <img
                   src={current.image}
                   alt={activeTab}
                   className="w-full h-full object-cover mix-multiply"
                 />
-              </div>
-              <div className="h-12 flex items-center justify-center">
-                <span className="text-gray-300 font-bold opacity-20 text-2xl tracking-tighter">
-                  ||||||||||||
-                </span>
               </div>
             </div>
 

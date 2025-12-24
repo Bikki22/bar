@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Testimonial from "../components/Testimonial";
+import NextHero from "../components/NextHero";
 
 const Pages = () => {
   const teamMembers = [
@@ -42,81 +43,7 @@ const Pages = () => {
   ];
   return (
     <section className="relative w-full bg-cover bg-center">
-      <div
-        className="relative z-10 flex items-center justify-center text-center md:h-[650px] h-96"
-        style={{
-          backgroundImage: "url('/barrelbg.jpg')",
-        }}
-      >
-        <div className="space-y-6">
-          <h1 className="retro-text text-white text-5xl md:text-8xl font-black uppercase tracking-tighter mb-4">
-            OUR TEAM
-          </h1>
-
-          <div className="mt-6 flex flex-col items-center gap-2">
-            <span className="w-40 h-[2px]"></span>
-            <span className="w-52 h-[2px] bg-white/40"></span>
-          </div>
-
-          <div className="inline-block md:w-lg w-50 relative bg-[#8d3f2d] py-2 text-white text-sm md:text-xl tracking-wide">
-            <div
-              className="bg-[#4c241b] w-7 h-5 inline-block absolute -right-0.5 -top-5 z-10
-                [clip-path:polygon(1%_100%,0_0,100%_100%)]"
-            ></div>
-            <div
-              className="bg-[#4c241b] w-7 h-5 inline-block absolute -left-0.5 -top-5 z-10
-  [clip-path:polygon(0_100%,100%_0,100%_100%)]"
-            ></div>
-            <svg
-              className="absolute left-[-35px]  top-1 -translate-y-1/2"
-              width="78"
-              height="52"
-              viewBox="0 0 78 52"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <pattern
-                  id="pattern-left"
-                  patternUnits="userSpaceOnUse"
-                  width="78"
-                  height="52"
-                >
-                  <rect width="60" height="50" fill="#8d3f2d" />
-
-                  <img
-                    href="https://vintclub.cwsthemes.com/wp-content/themes/vintclub/img/patterns/shape_pattern.png"
-                    width="78"
-                    height="52"
-                    opacity="0.25"
-                  />
-                </pattern>
-              </defs>
-
-              <path
-                d="M0.7,0.2l12,25.9L0.7,51.5h76.9V0.2H0.7z"
-                fill="url(#pattern-left)"
-              />
-            </svg>
-            <svg
-              className="absolute right-[-40px] top-0 -translate-y-1/2 fill-[#8d3f2d]"
-              width="68"
-              height="42"
-              viewBox="0 0 78 52"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M77.3,0.2l-12,25.9l12,25.4H0.4V0.2h76.9z"
-                className="#bb7037"
-              />
-            </svg>
-            <span className="md:text-xl text-sm italic flex justify-center z-50 px-5">
-              Home &nbsp;
-              <ArrowRight />
-              &nbsp; Our Team
-            </span>
-          </div>
-        </div>
-      </div>
+      <NextHero title={"Our team"} />
 
       <div
         className="bg-primary "

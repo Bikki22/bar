@@ -5,7 +5,7 @@ const BrandBeer = () => {
     <div
       className="relative bg-[#2a1d16] p-16 text-white overflow-hidden
 
-        before:content-['★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★']
+        before:content-['★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★']
         before:absolute        
         before:top-2
         before:left-0
@@ -17,7 +17,7 @@ const BrandBeer = () => {
         before:lg:block
         before:tracking-[6px]
 
-        after:content-['★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★']
+        after:content-['★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★']
         after:absolute
         after:bottom-2
         after:left-0
@@ -29,7 +29,7 @@ const BrandBeer = () => {
         after:text-xs
         after:tracking-[6px]"
     >
-      <span className="absolute hidden lg:block  left-2 top-0 h-full flex flex-col justify-center text-white text-xs leading-[14px]">
+      <span className="absolute hidden lg:block  left-2 top-0 h-full lg:flex flex-col justify-center text-white text-xs leading-[14px]">
         ★<br />★<br />★<br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★
         <br />★<br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★<br />★
         <br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★
@@ -39,7 +39,7 @@ const BrandBeer = () => {
         <br />★<br />★<br />★<br />★<br />★<br />★<br />
       </span>
 
-      <span className="absolute hidden lg:block  right-2 top-0 h-full flex flex-col justify-center text-white text-xs leading-[14px]">
+      <span className="absolute hidden lg:block  right-2 top-10 h-full flex flex-col justify-center text-white text-xs leading-[14px]">
         ★<br />★<br />★<br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★
         <br />★<br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★<br />★
         <br />★<br />★<br />★<br />★<br />★<br />★<br /> ★<br />★

@@ -101,7 +101,7 @@ const BeerStore = () => {
             className="lg:text-9xl text-4xl md:text-8xl font-black uppercase tracking-tight text-secondary
              drop-shadow-[4px_4px_0px_rgba(180,130,90,0.8)]"
           >
-            OUR BEER
+            OUR Drinks and foods
           </h3>
         </div>
 
@@ -124,6 +124,30 @@ const BeerStore = () => {
           />
           <Card
             title={"CHIMAY BEER"}
+            src={"./03_beer.png"}
+            date={"since 1941"}
+            description={
+              "Morbi tempor tincidunt sapien a aliquam. Nam in eleifend dui. vulputate imperdiet, mauris. Pellentesque sagittis vitae."
+            }
+          />
+          <Card
+            title={"Chowmin"}
+            src={"./01_beer.png"}
+            date={"since 1993"}
+            description={
+              "Morbi tempor tincidunt sapien a aliquam. Nam in eleifend dui. vulputate imperdiet, mauris. Pellentesque sagittis vitae."
+            }
+          />
+          <Card
+            title={"Momo"}
+            src={"./02_beer.png"}
+            date={"since 1927"}
+            description={
+              "Morbi tempor tincidunt sapien a aliquam. Nam in eleifend dui. vulputate imperdiet, mauris. Pellentesque sagittis vitae."
+            }
+          />
+          <Card
+            title={"Roast"}
             src={"./03_beer.png"}
             date={"since 1941"}
             description={

@@ -4,7 +4,7 @@ const Testimonial = ({ teamMembers }) => {
   return (
     <div className="flex items-center justify-center py-10 mt-6 w-full">
       <div className="w-full max-w-full">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-15 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 md:gap-10">
           {teamMembers.map((member, index) => (
             <div key={index} className="flex flex-col items-center pt-10 ">
               <div className="relative mb-18">
@@ -12,7 +12,7 @@ const Testimonial = ({ teamMembers }) => {
 
                 <div className="absolute inset-0 rounded-full bg-white transform scale-103"></div>
 
-                <div className="relative w-84 h-84 rounded-full overflow-hidden border-0 border-transparent shadow-xl">
+                <div className="relative lg:w-80 md:w-72 w-60 lg:h-84 md:h-72 h-60 rounded-full overflow-hidden border-0 border-transparent shadow-xl">
                   <img
                     src={member.image}
                     alt={member.name}
