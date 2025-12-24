@@ -1,11 +1,43 @@
 import React from "react";
+import { motion } from "motion/react";
 import Card from "./Card";
 
 const BeerStore = () => {
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Time between each element appearing
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.215, 0.61, 0.355, 1], // Smooth premium easing
+      },
+    },
+  };
   return (
-    <section className="bg-primary">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={containerVariants}
+      className="bg-primary"
+    >
       <div className="max-w-7xl mx-auto py-20 px-6 text-center">
-        <div className="flex items-center justify-center gap-2 text-sm tracking-widest text-stone-700 mb-4">
+        <motion.div
+          variants={itemVariants}
+          className="flex items-center justify-center gap-2 text-sm tracking-widest text-stone-700 mb-4"
+        >
           <span
             className="relative inline-block w-3 h-3 rounded-full bg-stone-800
             before:content-['']
@@ -94,18 +126,24 @@ const BeerStore = () => {
             after:-translate-y-1/2
             "
           ></span>
-        </div>
+        </motion.div>
 
-        <div className="flex items-center justify-center ">
+        <motion.div
+          variants={itemVariants}
+          className="flex items-center justify-center "
+        >
           <h3
             className="lg:text-9xl text-4xl md:text-8xl font-black uppercase tracking-tight text-secondary
              drop-shadow-[4px_4px_0px_rgba(180,130,90,0.8)]"
           >
             OUR Drinks and foods
           </h3>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-16 py-10">
+        <motion.div
+          variants={containerVariants}
+          className="grid md:grid-cols-1 lg:grid-cols-3 gap-16 py-10"
+        >
           <Card
             title={"KASTEEL BEER"}
             src={"./01_beer.png"}
@@ -154,9 +192,9 @@ const BeerStore = () => {
               "Morbi tempor tincidunt sapien a aliquam. Nam in eleifend dui. vulputate imperdiet, mauris. Pellentesque sagittis vitae."
             }
           />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

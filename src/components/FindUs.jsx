@@ -1,5 +1,4 @@
 import { BeerIcon, Mail, Phone } from "lucide-react";
-import React from "react";
 
 const FindUs = () => {
   return (

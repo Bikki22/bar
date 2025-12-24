@@ -1,12 +1,39 @@
-import Card from "./Card";
+import React from "react";
+import { motion } from "motion/react";
 import Slider from "./SliderCard";
-import CardSlider from "./SliderCard";
 
 const Blog = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Time between header and slider
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.215, 0.61, 0.355, 1], // Smooth premium easing
+      },
+    },
+  };
   return (
-    <section className="bg-primary">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+      className="bg-primary"
+    >
       <div className="max-w-7xl mx-auto py-20 px-6 text-center">
-        <div className="flex items-center justify-center gap-2 text-sm tracking-widest text-stone-700 mb-4">
+        <motion.div className="flex items-center justify-center gap-2 text-sm tracking-widest text-stone-700 mb-4">
           <span
             className="relative inline-block w-3 h-3 rounded-full bg-stone-800
             before:content-['']
@@ -95,7 +122,7 @@ const Blog = () => {
             after:-translate-y-1/2
             "
           ></span>
-        </div>
+        </motion.div>
 
         <div className="flex items-center justify-center ">
           <h3
@@ -106,11 +133,11 @@ const Blog = () => {
           </h3>
         </div>
 
-        <div className="w-full">
+        <motion.div variants={itemVariants} className="w-full">
           <Slider />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,13 +1,52 @@
 import React from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 const BeerTank = () => {
+  const targetRef = useRef(null);
+
+  // Parallax: The tank moves slightly upwards as you scroll down
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+  const tankY = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
+  // Variants for staggered children
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] },
+    },
+  };
+
   return (
-    <section className="bg-orange bg-[url('./paper-background.jpg')] p-12 md:p-20 relative text-secondary">
+    <motion.section
+      ref={targetRef}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+      className="bg-orange bg-[url('./paper-background.jpg')] p-12 md:p-20 relative text-secondary"
+    >
       <div className="absolute inset-4 border-3 border-dotted border-white/40 pointer-events-none"></div>
 
       <div className="md:max-w-7xl w-full mx-auto md:flex flex-col lg:flex-row items-center gap-10">
         <div className="flex-1 space-y-5">
-          <div className="flex items-center gap-5">
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-5"
+          >
             <span className="uppercase font-semibold text-lg md:text-3xl tracking-tight">
               Quality in a year
             </span>
@@ -52,20 +91,32 @@ const BeerTank = () => {
             after:-translate-y-1/2
             "
             ></span>
-          </div>
+          </motion.div>
 
-          <h1 className="md:text-9xl text-4xl font-bold uppercase text-center leading-none px-2">
+          <motion.h1
+            variants={itemVariants}
+            className="md:text-9xl text-4xl font-bold uppercase text-center leading-none px-2"
+          >
             Brewery
-          </h1>
+          </motion.h1>
 
-          <div className="bg-contain bg-white/90 inline-block px-8 py-1">
-            <p className="font-bold uppercase tracking-normal md:text-2xl text-sm ">
+          <motion.div
+            variants={itemVariants}
+            className="bg-contain bg-white/90 inline-block px-8 py-1"
+          >
+            <motion.p
+              variants={itemVariants}
+              className="font-bold uppercase tracking-normal md:text-2xl text-sm "
+            >
               Tempor tincidunt sapien a aliq in
-            </p>
-            <p className="font-bold uppercase tracking-normal md:text-2xl text-sm">
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="font-bold uppercase tracking-normal md:text-2xl text-sm"
+            >
               eleifend pellentesque
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <p className="max-w-md text-xl opacity-90 text-primary ">
             Tempor tincidunt sapien a aliquam. Nam eleifend dui. Pellentesque
@@ -73,7 +124,7 @@ const BeerTank = () => {
             nulla convallis felis.
           </p>
 
-          <div className="pt-4">
+          <motion.div variants={itemVariants} className="pt-4">
             <button className="border-t-4 border-b-4 py-3 px-5 border-white/60 ">
               <span
                 className="md:text-2xl text-xl text-white/60 uppercase relative
@@ -97,26 +148,30 @@ const BeerTank = () => {
                 Discover
               </span>
             </button>
-          </div>
-          <div className="mt-14 flex flex-col items-center border-t border-[#2b1f1a]/20 pt-6">
+          </motion.div>
+          <motion.div
+            variants={itemVariants}
+            className="mt-14 flex flex-col items-center border-t border-[#2b1f1a]/20 pt-6"
+          >
             <img
               src="./operating-wordwide.png"
               alt=""
               width={750}
               height={200}
             />
-          </div>
+          </motion.div>
         </div>
 
-        <div className="flex-1 flex justify-center">
-          <img
+        <motion.div className="flex-1 flex justify-center" style={{ y: tankY }}>
+          <motion.img
+            variants={itemVariants}
             src="./beer-tank.png"
             alt="Brewery Vat"
             className="w-full max-w-md drop-shadow-2xl"
           />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
